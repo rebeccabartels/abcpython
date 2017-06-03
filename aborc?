@@ -1,0 +1,20 @@
+sprite = codesters.Sprite("person1", 0, -200)
+
+ltr_list = ["a", "b", "c", "d"]
+random_letter = random.randint(0,3)
+letter = ltr_list[random_letter]
+
+sprite.say("I'm thinking of a letter, either a, b, c, or d.")
+stage.wait(1)
+sprite.say("I'll give you three chances to guess.")
+
+
+for counter in range(3):
+    guess = sprite.ask("Can you guess my letter?")
+    if guess != letter:
+        sprite.say("Nope! Guess again!")
+        stage.wait(2)
+    if guess == letter:
+        sprite.say("You got it!")
+        stage.wait(2)
+        break
